@@ -43,7 +43,7 @@ public class DataGenerator {
             List<Company> companies = companyRepository.saveAll(companyGenerator.create(5, seed));
 
             List<Status> statuses = statusRepository
-                    .saveAll(Stream.of("Imported lead", "Not contacted", "Contacted", "Customer", "Closed (lost)")
+                    .saveAll(Stream.of("subscribed", "unsubscribed", "pending", "bounced")
                             .map(Status::new).collect(Collectors.toList()));
 
             logger.info("... generating 50 Contact entities...");
